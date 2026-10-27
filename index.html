@@ -42,9 +42,12 @@
   .piece.wide .media.pair { grid-template-columns: 1fr 1fr; }
   .piece img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 10px; display: block; cursor: zoom-in; }
   .piece img.photo { object-fit: cover; }
+  .piece figure { margin: 0; }
+  .piece figure figcaption { display: none; font-size: 13px; color: #777; margin-top: 6px; }
   .piece.wide img { aspect-ratio: 16 / 11; }
   .piece h3 { font-size: 19px; margin: 16px 0 4px; }
   .piece p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  .pair-caps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 13px; color: #777; margin: 6px 0 14px; }
 
   .tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
   .tools li { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: #333; }
@@ -60,6 +63,8 @@
   @media (max-width: 720px) {
     .grid { grid-template-columns: 1fr; gap: 36px; }
     .piece.wide .media.pair { grid-template-columns: 1fr; }
+    .pair-caps { display: none; }
+    .piece .media.pair figure figcaption { display: block; }
     header.top nav a:not(.keep) { display: none; }
     .hero p { font-size: 16px; }
   }
@@ -74,6 +79,7 @@
       <a href="#rig">Behavioral rig</a>
       <a href="#surgery">Head fixation</a>
       <a href="#fixtures">Lab fixtures</a>
+      <a href="#sensor">Leaf sensor mount</a>
       <a class="keep" href="Bora_Mandic_Portfolio.pdf">PDF</a>
     </nav>
   </div>
@@ -83,7 +89,7 @@
   <section class="hero">
     <h1>Bora Mandic</h1>
     <div class="tag">Mechanical Design Portfolio · Stanford Mechanical Engineering</div>
-    <p>I'm a Stanford mechanical engineering student designing hardware for in-vivo mouse neuroscience: a full behavioral rig, head fixation, and surgery and histology fixtures. Every design here is parametric in Fusion, so parts can be quickly adjusted per experiment or per mouse, and each was printed, tested, and refined in the lab.</p>
+    <p>I'm a Stanford mechanical engineering student interested in biotech and neurotech, designing parts for neuroscience and electrical engineering research: a full behavioral rig, head fixation, surgery and histology fixtures, and a leaf sensor mount. Every design here is parametric in Fusion, so parts can be quickly adjusted per experiment or per mouse, and each was printed, tested, and refined in the lab.</p>
     <div class="btns">
       <a class="btn-primary" href="mailto:boram@stanford.edu">boram@stanford.edu</a>
       <a class="btn-secondary" href="Bora_Mandic_Portfolio.pdf">Download PDF</a>
@@ -139,7 +145,7 @@
       <div class="piece wide">
         <img src="img/headmount_hero.jpg" alt="CAD render of the circular head mount">
         <h3>Circular Head Mount</h3>
-        <p>Holds mice head-fixed on the rig while encircling the craniotomy site, which makes surgery easier. The ring forms a well that keeps saline over the skull between behavior sessions, improving animal welfare. Includes two fiber-optic ports and a grounding pin.</p>
+        <p>Holds mice head-fixed on the rig while encircling the craniotomy site, which makes surgery easier. The ring forms a well that keeps saline over the skull between behavior sessions, improving animal welfare. Includes two ports, one for a fiber optic and one for a grounding pin.</p>
       </div>
       <div class="piece">
         <img src="img/mountholder.jpg" alt="CAD render of the surgery mount holder">
@@ -156,6 +162,26 @@
         <img src="img/other_platingaid.jpg" alt="CAD render of the parametric plating aid">
         <h3>Parametric Plating Aid</h3>
         <p>Adjustable wells for plating different brain slices onto microscope slides. It made my plating faster and cleaner; I now out-plate a postdoc with over a decade of experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="group" id="sensor">
+    <h2>Leaf sensor mount</h2>
+    <div class="grid">
+      <div class="piece wide">
+        <div class="media pair">
+          <figure><img src="img/sensormount_v3.jpg" alt="CAD render of leaf sensor mount v3"><figcaption>v3: screwed on</figcaption></figure>
+          <figure><img src="img/sensormount_v3_open.jpg" alt="CAD render of leaf sensor mount v3, second view"><figcaption>v3: top cap outer face (upper), other half's interior (lower)</figcaption></figure>
+        </div>
+        <div class="pair-caps"><span>v3: screwed on</span><span>v3: top cap outer face (upper), other half's interior (lower)</span></div>
+        <div class="media pair">
+          <figure><img src="img/sensormount_v6.jpg" alt="CAD render of leaf sensor mount v6"><figcaption>v6: built-in clip</figcaption></figure>
+          <figure><img src="img/sensormount_v6_top.jpg" alt="CAD render of leaf sensor mount v6, second view"><figcaption>v6: interiors of both halves</figcaption></figure>
+        </div>
+        <div class="pair-caps"><span>v6: built-in clip</span><span>v6: interiors of both halves</span></div>
+        <h3>Leaf Sensor Mount</h3>
+        <p>For the S4 Lab: a mount that clips onto the side of a leaf, dimensioned around our specific sensor. The inside is filled with foam, which pushes the sensor against the leaf. Earlier versions screwed on; I built in a clip instead, so no additional hardware or weight is needed. Six versions so far, and the work is ongoing.</p>
       </div>
     </div>
   </section>
